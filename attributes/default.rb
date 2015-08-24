@@ -6,6 +6,4 @@ default['dnsmasq']['dns'] = {
   'server' => '127.0.0.1'
 }
 default['dnsmasq']['dns_options'] = []
-default['dnsmasq']['managed_hosts'] = {}
-default['dnsmasq']['managed_hosts_bag'] = 'managed_hosts'
 default['dnsmasq']['user'] = 'dnsmasq'

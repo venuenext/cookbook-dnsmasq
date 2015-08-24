@@ -32,30 +32,10 @@ Includes the `default` recipe and writes the contents of the `node[:dnsmasq][:dh
 
 Includes the `default` and `manage_hostsfile` recipes, then writes the content of the `node[:dnsmasq][:dns]` attribute hash to `/etc/dnsmasq.d/dns.conf`.
 
-## manage_hostsfile
-
-Loads the `dnsmasq` data bag `managed_hosts` item and merges it with any nodes in the `[:dnsmasq][:managed_hosts]` attribute, then writes them out the the `/etc/hosts/` via the `hosts_file` cookbook.
-
-# Usage
-
-## Data Bag
-
-If you need manage your DNS hosts you may use the `dnsmasq` data bag `managed_hosts` item. It takes the form:
-
-```json
-{
-    "id": "managed_hosts",
-    "192.168.0.100": "www.google.com",
-    "192.168.0.101": ["www.yahoo.com", "www.altavista.com"]
-}
-```
-
 ## Attributes
 
 * `[:dnsmasq][:enable_dns]` whether to enable the DNS service, default is `true`
 * `[:dnsmasq][:enable_dhcp]` whether to enabled the DHCP service, default is `false`
-* `[:dnsmasq][:managed_hosts]` hash of IPs and hostname/array of hostnames for the `manage_hostfile` recipe, default is empty
-* `[:dnsmasq][:managed_hosts_bag]` name of the data bag item, default is `managed_hosts`
 * `[:dnsmasq][:dhcp]` = hash of settings and values for the `/etc/dnsmasq.d/dhcp.conf`, default is empty
 * `[:dnsmasq][:dhcp_options]` = list of options to be added to the `/etc/dnsmasq.d/dhcp.conf` (ie. `['dhcp-host=80:ee:73:0a:fa:d9,crushinator,10.0.0.11']`), default is empty.
 * `[:dnsmasq][:dns]` hash of settings and values for the `/etc/dnsmasq.d/dns.conf`, defaults are
