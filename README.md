@@ -30,7 +30,7 @@ Includes the `default` recipe and writes the contents of the `node[:dnsmasq][:dh
 
 ## dns
 
-Includes the `default` and `manage_hostsfile` recipes, then writes the content of the `node[:dnsmasq][:dns]` attribute hash to `/etc/dnsmasq.d/dns.conf`.
+Includes the `default` recipe, then writes the content of the `node[:dnsmasq][:dns]` attribute hash to `/etc/dnsmasq.d/dns.conf`.
 
 ## Attributes
 
