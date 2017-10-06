@@ -1,4 +1,5 @@
-package 'dnsmasq'
+package 'dnsmasq' do
+  action :upgrade
 
 include_recipe 'dnsmasq::dns' if node['dnsmasq']['enable_dns']
 include_recipe 'dnsmasq::dhcp' if node['dnsmasq']['enable_dhcp']
